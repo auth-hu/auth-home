@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loea/const/color.dart';
+import 'package:loea/const/listpages.dart';
 
 class homeAndriod extends StatefulWidget {
   const homeAndriod({super.key});
@@ -17,27 +18,50 @@ class _homeAndriodState extends State<homeAndriod> {
     return Scaffold(
       backgroundColor: milk,
       body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            return Column(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(16),
-                  color: gray, 
-                  width: double.infinity,
-                  child: Text(
-                    "loea",
-                    style: GoogleFonts.rubik(
-                      color: milk,
-                      fontSize: 18
-                    ),
-                    )
-                  ),
-              ],
-            );
-          },
-        ),
+        child: Pages[currentPage],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        unselectedItemColor: gray,
+        selectedItemColor: gray,
+        currentIndex: currentPage,
+        onTap: (index){
+          setState(() {
+            currentPage = index;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,
+            color: gray,
+            ),
+            label: "الرئيسية",
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.store,
+            color: gray,
+            ),
+            label: "المخزن"
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add,
+            color: gray,
+            ),
+            label: "الطلبات"
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics,
+            color: gray,
+            ),
+            label: "الاحصائيات"
+            ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.sticky_note_2_rounded,
+            color: gray,
+            ),
+            label: "النواقص"
+            ),
+        ],
+        ),
     );
   }
 }

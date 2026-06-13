@@ -21,8 +21,10 @@ class _homeAndriodState extends State<homeAndriod> {
         child: Pages[currentPage],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: gray,
         selectedItemColor: gray,
+        unselectedItemColor: gray,
+        selectedLabelStyle: TextStyle(color: gray),
+        unselectedLabelStyle: TextStyle(color: gray),
         currentIndex: currentPage,
         onTap: (index){
           setState(() {
@@ -31,33 +33,23 @@ class _homeAndriodState extends State<homeAndriod> {
         },
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home,
-            color: gray,
-            ),
-            label: "الرئيسية",
+            icon: Icon(Icons.home),
+            label: "الرئيسية"
             ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.store,
-            color: gray,
-            ),
+            icon: Icon(Icons.store),
             label: "المخزن"
             ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add,
-            color: gray,
-            ),
+            icon: Icon(Icons.add),
             label: "الطلبات"
             ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.analytics,
-            color: gray,
-            ),
+            icon: Icon(Icons.analytics),
             label: "الاحصائيات"
             ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.sticky_note_2_rounded,
-            color: gray,
-            ),
+            icon: Icon(Icons.sticky_note_2_rounded),
             label: "النواقص"
             ),
         ],

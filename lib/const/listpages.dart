@@ -12,3 +12,14 @@ List Pages = [
 ];
 
 int currentPage = 0;
+
+
+List data = [
+  'شاشات',
+  'فلات شحن',
+  'ناقل معلومات',
+  'بطاريات',
+  'جكات شحن',
+];
+
+List dataPage = [];

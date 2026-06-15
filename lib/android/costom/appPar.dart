@@ -5,47 +5,53 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:loea/const/color.dart';
 
 class Apppar extends StatefulWidget {
-  const Apppar({super.key});
+  final String title;
+  final bool search;
+  const Apppar({super.key, required this.title, required this.search});
 
   @override
   State<Apppar> createState() => _AppparState();
 }
 
 class _AppparState extends State<Apppar> {
+
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: widget.search ? EdgeInsets.all(0) : EdgeInsets.all(12),
       alignment: Alignment.centerRight,
-      padding: EdgeInsets.all(4),
       color: gray,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-            IconButton(
-              onPressed: () {
-                
-              },
-               icon: Icon(
-                Icons.search,
-                color: milk,
-                )
-               ),
-
-          Expanded(
-            child: Container(
-              margin: EdgeInsets.only(right: 12),
-              child: Text(
-                "المخزن",
-                textAlign: TextAlign.end,
-                style: GoogleFonts.rubik(
+      child: Container(
+        margin: EdgeInsets.all(4),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+              widget.search ? IconButton(
+                onPressed: () {
+                  
+                },
+                 icon: Icon(
+                  Icons.search,
                   color: milk,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  )
+                 ) : Container(),
+        
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.only(right: 12),
+                child: Text(
+                  widget.title,
+                  textAlign: TextAlign.end,
+                  style: GoogleFonts.rubik(
+                    color: milk,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
+              )
             )
-          )
-        ],
+          ],
+        ),
       ),
     );
   }

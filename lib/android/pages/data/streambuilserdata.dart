@@ -2,6 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:loea/const/color.dart';
 
 class StreamBuilderData extends StatefulWidget {
   final String collection;
@@ -25,7 +26,7 @@ class _StreamBuilderDataState extends State<StreamBuilderData> {
           return Center(child: CircularProgressIndicator());
         }
 
-        if (!snapshot.hasData) {
+        if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
           return Center(child: Text("لا يوجد بيانات"));
         }
 
@@ -38,7 +39,13 @@ class _StreamBuilderDataState extends State<StreamBuilderData> {
 
             return ListTile(
               title: Text(data['name']),
-              subtitle: Text(data['count']),
+              subtitle: Text("عدد القطع: ${data['pieces']}"),
+              shape: Border(
+                bottom: BorderSide(
+                  width: 1.2,
+                  color: gray
+                )
+              ),
             );
           },
         );

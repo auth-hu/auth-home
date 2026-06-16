@@ -9,24 +9,24 @@ import 'package:loea/android/pages/data/streambuilserdata.dart';
 import 'package:loea/const/color.dart';
 import 'package:loea/const/textEditController.dart';
 
-class Screendata extends StatefulWidget {
-  const Screendata({super.key});
+class Battrydata extends StatefulWidget {
+  const Battrydata({super.key});
 
   @override
-  State<Screendata> createState() => _ScreendataState();
+  State<Battrydata> createState() => _BattrydataState();
 }
 
-class _ScreendataState extends State<Screendata> {
+class _BattrydataState extends State<Battrydata> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
-            Apppar(title: "الشاشات", search: false),
+            Apppar(title: "البطاريات", search: false),
 
             Textfieldsearch(
-              screen: "شاشات",
+              screen: "البطاريات",
               controller: searchController,
               onChanged: (p0) {
                 setState(() {});
@@ -34,7 +34,7 @@ class _ScreendataState extends State<Screendata> {
             ),
 
             Addsome(
-              screen: "شاشة",
+              screen: "البطاريات",
               onTap: () {
                 showModalBottomSheet(
                   context: context,
@@ -78,7 +78,7 @@ class _ScreendataState extends State<Screendata> {
                                             controller: companyPriceController,
                                           ),
                                           Addsomefield(
-                                            title: "الشاشات المطابقة",
+                                            title: "البطاريات المتشابهة",
                                             controller: likeController,
                                           ),
                                         ],
@@ -130,19 +130,12 @@ class _ScreendataState extends State<Screendata> {
 
             Expanded(
               child: Container(
-                clipBehavior: Clip.hardEdge,
                 decoration: BoxDecoration(
                   border: Border.all(width: 1.2, color: gray),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                margin: EdgeInsets.symmetric(horizontal: 12),
-                child: Container(
-                  height: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12)
-                  ),
-                  child: StreamBuilderData(collection: "screen"),
-                ),
+                margin: const EdgeInsets.symmetric(horizontal: 12),
+                child: StreamBuilderData(collection: "battry"),
               ),
             ),
           ],

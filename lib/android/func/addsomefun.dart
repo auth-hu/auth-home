@@ -5,7 +5,7 @@ import 'package:loea/const/textEditController.dart';
 Future<void> addSomeFun() async {
   await FirebaseFirestore.instance.collection('screen').add({
     'name' : nameController.text,
-    'pieces' : "${piecesController.text} IDQ",
+    'pieces' : piecesController.text,
     'CompanyPrice' : companyPriceController.text,
     'likeScreen' : likeController.text,
     'createSearchKewwords' : [

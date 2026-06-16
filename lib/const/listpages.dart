@@ -1,13 +1,18 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:loea/android/addcostomer.dart';
+import 'package:loea/android/pages/battryinfo.dart';
+import 'package:loea/android/pages/charingdata.dart';
+import 'package:loea/android/pages/flatchargingdata.dart';
+import 'package:loea/android/pages/infodata.dart';
 import 'package:loea/android/pages/screendata.dart';
 import 'package:loea/android/pages/storage.dart';
 
 List Pages = [
   Center(child: Text("الرئيسية"),),
   Storage(),
-  Center(child: Text("الطلبات"),),
+  Addcostomer(),
   Center(child: Text("الطلبات"),),
   Center(child: Text("النواقص"),),
 ];
@@ -25,6 +30,10 @@ List data = [
 
 List dataPage = [
   Screendata(),
+  Flatcharingdat(),
+  Infodata(),
+  Battrydata(),
+  Chargingdata()
 ];
 
 List imagedata = [

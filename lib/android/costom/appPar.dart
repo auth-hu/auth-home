@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:loea/android/home_android.dart';
 import 'package:loea/const/color.dart';
 
 class Apppar extends StatefulWidget {
@@ -14,7 +15,6 @@ class Apppar extends StatefulWidget {
 }
 
 class _AppparState extends State<Apppar> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,20 +22,25 @@ class _AppparState extends State<Apppar> {
       alignment: Alignment.centerRight,
       color: gray,
       child: Container(
-        margin: EdgeInsets.all(4),
+        margin: widget.search ? EdgeInsets.all(4) : EdgeInsets.zero,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-              widget.search ? IconButton(
-                onPressed: () {
-                  
-                },
-                 icon: Icon(
-                  Icons.search,
-                  color: milk,
+            widget.search
+                ? IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.search, color: milk),
                   )
-                 ) : Container(),
-        
+                : IconButton(
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => homeAndriod()),
+                      );
+                    },
+                    icon: Icon(Icons.arrow_back, color: milk),
+                  ),
+
             Expanded(
               child: Container(
                 margin: EdgeInsets.only(right: 12),
@@ -48,8 +53,8 @@ class _AppparState extends State<Apppar> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              )
-            )
+              ),
+            ),
           ],
         ),
       ),

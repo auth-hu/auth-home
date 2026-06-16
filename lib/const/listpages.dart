@@ -8,7 +8,7 @@ List Pages = [
   Center(child: Text("الرئيسية"),),
   Storage(),
   Center(child: Text("الطلبات"),),
-  Screendata(),
+  Center(child: Text("الطلبات"),),
   Center(child: Text("النواقص"),),
 ];
 
@@ -23,7 +23,9 @@ List data = [
   'جكات شحن',
 ];
 
-List dataPage = [];
+List dataPage = [
+  Screendata(),
+];
 
 List imagedata = [
   Icon(Icons.screenshot_rounded),

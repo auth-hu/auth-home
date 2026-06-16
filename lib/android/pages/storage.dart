@@ -1,6 +1,5 @@
 // ignore_for_file: sized_box_for_whitespace
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loea/android/costom/appPar.dart';
@@ -20,7 +19,7 @@ class _StorageState extends State<Storage> {
     return SafeArea(
       child: Column(
         children: [
-          Apppar(title: "المخزن", search: true,),
+          Apppar(title: "المخزن", search: true),
           Container(
             margin: EdgeInsets.only(top: 4),
             child: Column(
@@ -31,14 +30,23 @@ class _StorageState extends State<Storage> {
                     itemCount: data.length,
                     itemBuilder: (context, index) {
                       return ListTile(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => dataPage[index],
+                            ),
+                          );
+                        },
+                        isThreeLine: false,
                         trailing: imagedata[index],
-                        title: Text(data[index], textAlign: TextAlign.end, style: GoogleFonts.rubik(),),
-                        subtitle: Text(''),
+                        title: Text(
+                          data[index],
+                          textAlign: TextAlign.end,
+                          style: GoogleFonts.rubik(),
+                        ),
                         shape: Border(
-                          bottom: BorderSide(
-                            color: gray,
-                            width: .8
-                          )
+                          bottom: BorderSide(color: gray, width: .8),
                         ),
                       );
                     },

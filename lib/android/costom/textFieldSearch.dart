@@ -6,13 +6,17 @@ import 'package:loea/const/color.dart';
 
 class Textfieldsearch extends StatelessWidget {
   final String screen;
-  const Textfieldsearch({super.key, required this.screen});
+  final TextEditingController controller;
+  final Function(String)? onChanged;
+  const Textfieldsearch({super.key, required this.screen, required this.controller, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(12),
       child: TextFormField(
+        controller: controller,
+        onChanged: onChanged,
         maxLines: 1,
         cursorColor: gray,
 

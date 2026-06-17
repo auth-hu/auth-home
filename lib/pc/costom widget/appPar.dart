@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loea/const/bool.dart';
 import 'package:loea/const/color.dart';
+import 'package:loea/pc/const/list.dart';
 import 'package:loea/pc/costom%20widget/munelist.dart';
 
 class Apppar extends StatefulWidget {
@@ -24,90 +25,7 @@ class _AppparState extends State<Apppar> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              /* List Mune Section Start */
-              Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Munelist(
-                      onPressed: () {
-                        setState(() {
-                          needs = !needs;
-                          anyz = false;
-                          orders = false;
-                          storge = false;
-                          home = false;
-                        });
-                      },
-                      icon: Icons.note_add,
-                      text: "قائمة الطلبات",
-                      active: needs,
-                    ),
-                    Munelist(
-                      onPressed: () {
-                        setState(() {
-                          needs = false;
-                          anyz = !anyz;
-                          orders = false;
-                          storge = false;
-                          home = false;
-                        });
-                      },
-                      icon: Icons.analytics,
-                      text: "الأحصائيات",
-                      active: anyz,
-                    ),
-                    Munelist(
-                      onPressed: () {
-                        setState(() {
-                          needs = false;
-                          anyz = false;
-                          orders = !orders;
-                          storge = false;
-                          home = false;
-                        });
-                      },
-                      icon: Icons.store_mall_directory_sharp,
-                      text: "الطلبات",
-                      active: orders,
-                    ),
-                    Munelist(
-                      onPressed: () {
-                        setState(() {
-                          needs = false;
-                          anyz = false;
-                          orders = false;
-                          storge = !storge;
-                          home = false;
-                        });
-                      },
-                      icon: Icons.storage,
-                      text: "المخزن",
-                      active: storge,
-                    ),
-                    Munelist(
-                      onPressed: () {
-                        setState(() {
-                          needs = false;
-                          anyz = false;
-                          orders = false;
-                          storge = false;
-                          home = !home;
-                        });
-                      },
-                      icon: Icons.home,
-                      text: "الرئيسية",
-                      active: home,
-                    ),
-                  ],
-                ),
-              ),
-              /* List Mune Section End */
-
-              SizedBox(width: 400,),
-
-              /* Start Logo Section */
+             /* Start Logo Section */
               Container(
                 margin: EdgeInsets.zero,
                 child: Text(
@@ -121,6 +39,20 @@ class _AppparState extends State<Apppar> {
               ),
 
               /* End Logo Section */
+
+              /* Taps Seection Start */
+
+              DefaultTabController(
+                length: 5,
+                child: TabBar(
+                  tabs: [
+                    Tab(icon: Icon(Icons.home), text: "الرئيسية",)
+                  ]
+                  )
+                )
+
+
+              /* Taps Seection End */
             ],
           ),
         );

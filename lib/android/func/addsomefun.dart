@@ -16,7 +16,6 @@ Future<void> addSomeFun() async {
   nameController.clear();
   piecesController.clear();
   companyPriceController.clear();
-  ourPriceController.clear();
   likeController.clear();
 
 }

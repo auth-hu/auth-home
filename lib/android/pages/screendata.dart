@@ -25,14 +25,8 @@ class _ScreendataState extends State<Screendata> {
           children: [
             Apppar(title: "الشاشات", search: false),
 
-            Textfieldsearch(
-              screen: "شاشات",
-              controller: searchController,
-              onChanged: (p0) {
-                setState(() {});
-              },
-            ),
-
+            
+            SizedBox(height: 8,),
             Addsome(
               screen: "شاشة",
               onTap: () {
@@ -139,7 +133,7 @@ class _ScreendataState extends State<Screendata> {
                 child: Container(
                   height: double.infinity,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12)
+                    borderRadius: BorderRadius.circular(12),
                   ),
                   child: StreamBuilderData(collection: "screen"),
                 ),

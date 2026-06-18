@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:loea/android/costom/searchdeleget.dart';
 import 'package:loea/android/home_android.dart';
 import 'package:loea/const/color.dart';
+import 'package:loea/const/firebasefirestore.dart';
 
 class Apppar extends StatefulWidget {
   final String title;
@@ -16,6 +18,12 @@ class Apppar extends StatefulWidget {
 
 class _AppparState extends State<Apppar> {
   @override
+  void initState() {
+    super.initState();
+    getScreen();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: widget.search ? EdgeInsets.all(0) : EdgeInsets.all(12),
@@ -26,20 +34,12 @@ class _AppparState extends State<Apppar> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            widget.search
-                ? IconButton(
-                    onPressed: () {},
-                    icon: Icon(Icons.search, color: milk),
-                  )
-                : IconButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => homeAndriod()),
-                      );
-                    },
-                    icon: Icon(Icons.arrow_back, color: milk),
-                  ),
+            IconButton(
+              onPressed: () {
+                showSearch(context: context, delegate: Searchdelegetapp());
+              },
+              icon: Icon(Icons.search, color: milk),
+            ),
 
             Expanded(
               child: Container(

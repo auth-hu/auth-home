@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:loea/const/color.dart';
 import 'package:loea/const/textEditController.dart';
-import 'package:loea/pc/const/bools.dart';
 import 'package:loea/pc/costom%20widget/addprodact.dart';
+import 'package:loea/pc/costompage/storageinfo.dart';
+import 'package:loea/pc/costompage/storagelist.dart';
 
 class Storage extends StatefulWidget {
   const Storage({super.key});
@@ -17,7 +19,13 @@ class _StorageState extends State<Storage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Center(child: Text("Storage")),
+        body: Expanded(
+          child: Row(
+            children: [
+              Expanded(child: Storagelist()),
+            ],
+          ),
+        ),
 
         floatingActionButton: Material(
           child: FloatingActionButton(
@@ -59,22 +67,50 @@ class _StorageState extends State<Storage> {
                                         title: 'اسم المنتج',
                                         controller: nameController,
                                       ),
-                                      SizedBox(height: 12,),
+                                      SizedBox(height: 12),
                                       Addprodact(
                                         title: 'العدد',
                                         controller: piecesController,
                                       ),
-                                      SizedBox(height: 12,),
+                                      SizedBox(height: 12),
                                       Addprodact(
                                         title: 'سعر الشركة',
                                         controller: companyPriceController,
                                       ),
-                                      SizedBox(height: 12,),
+                                      SizedBox(height: 12),
                                       Addprodact(
                                         title: 'شاشات متشابهة',
                                         controller: likeController,
                                       ),
-                                      SizedBox(height: 12,),
+                                      SizedBox(height: 12),
+
+                                      Container(
+                                        decoration: BoxDecoration(
+                                          color: green,
+                                          borderRadius: BorderRadius.circular(
+                                            24,
+                                          ),
+                                        ),
+                                        margin: EdgeInsets.symmetric(
+                                          vertical: 12,
+                                          horizontal: 98,
+                                        ),
+                                        width: double.infinity,
+                                        child: MaterialButton(
+                                          padding: EdgeInsets.symmetric(
+                                            vertical: 18,
+                                          ),
+                                          onPressed: () {},
+                                          child: Text(
+                                            "أضف المنتج",
+                                            style: GoogleFonts.rubik(
+                                              color: milk,
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                     ],
                                   ),
                                 ),

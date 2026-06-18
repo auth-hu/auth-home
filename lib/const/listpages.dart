@@ -8,6 +8,7 @@ import 'package:loea/android/pages/flatchargingdata.dart';
 import 'package:loea/android/pages/infodata.dart';
 import 'package:loea/android/pages/screendata.dart';
 import 'package:loea/android/pages/storage.dart';
+import 'package:loea/pc/costompage/screeninfopage.dart';
 
 List Pages = [
   Center(child: Text("الرئيسية"),),
@@ -34,6 +35,14 @@ List dataPage = [
   Infodata(),
   Battrydata(),
   Chargingdata()
+];
+
+List dataPagePC = [
+  Screeninfopage(),
+  Screeninfopage(),
+  Screeninfopage(),
+  Screeninfopage(),
+  Screeninfopage(),
 ];
 
 List imagedata = [

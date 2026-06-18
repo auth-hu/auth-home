@@ -30,19 +30,13 @@ class _homePcState extends State<homePc> {
               margin: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
               child: Text("مكتب النور", textAlign: TextAlign.end),
             ),
-            leading: Container(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-              child: IconButton(
-                hoverColor: Color(0xffffffff),
-                onPressed: () {},
-                icon: Icon(Icons.search, color: gray,),
-              ),
-            ),
+
             titleTextStyle: GoogleFonts.rubik(
               fontWeight: FontWeight.bold,
               fontSize: 28,
               color: gray,
             ),
+            
             bottom: TabBar(
               indicatorColor: green,
               indicatorSize: TabBarIndicatorSize.label,

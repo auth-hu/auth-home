@@ -51,6 +51,7 @@ class _AppparState extends State<Apppar> {
                     color: milk,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.none
                   ),
                 ),
               ),

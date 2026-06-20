@@ -8,6 +8,7 @@ import 'package:loea/android/pages/flatchargingdata.dart';
 import 'package:loea/android/pages/infodata.dart';
 import 'package:loea/android/pages/screendata.dart';
 import 'package:loea/android/pages/storage.dart';
+import 'package:loea/const/color.dart';
 import 'package:loea/pc/costompage/screeninfopage.dart';
 
 List Pages = [
@@ -52,3 +53,13 @@ List imagedata = [
   Icon(Icons.battery_0_bar),
   Icon(Icons.charging_station_rounded),
 ];
+
+List imagedata2 = [
+  Icon(Icons.screenshot_rounded, size: 84, color: milk,),
+  Icon(Icons.charging_station, size: 84, color: milk,),
+  Icon(Icons.open_in_full_sharp, size: 84, color: milk,),
+  Icon(Icons.battery_0_bar, size: 84, color: milk,),
+  Icon(Icons.charging_station_rounded, size: 84, color: milk,),
+];
+
+List pcColorGird = [cyan, cyan2, gray, green, darkred];

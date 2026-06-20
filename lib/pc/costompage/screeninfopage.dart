@@ -18,7 +18,7 @@ class _ScreeninfopageState extends State<Screeninfopage> {
         children: [
           Expanded(
             child: SingleChildScrollView(
-              child: Column(
+              child: Row(
                 children: [
                   Apppar(title: "الشاشات", search: true),
                   Container(

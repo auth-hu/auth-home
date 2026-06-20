@@ -19,13 +19,8 @@ class _StorageState extends State<Storage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Expanded(
-          child: Row(
-            children: [
-              Expanded(child: Storagelist()),
-            ],
-          ),
-        ),
+        body: Center(child: Storagelist()),
+
 
         floatingActionButton: Material(
           child: FloatingActionButton(

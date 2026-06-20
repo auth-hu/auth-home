@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:loea/android/costom/appPar.dart';
 import 'package:loea/const/color.dart';
 import 'package:loea/const/listpages.dart';
 
@@ -16,47 +13,59 @@ class Storagelist extends StatefulWidget {
 class _StoragelistState extends State<Storagelist> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-        children: [
-          Apppar(title: "", search: true),
-          Container(
-            margin: EdgeInsets.only(top: 4),
-            child: Column(
-              children: [
-                Container(
-                  height: 300,
-                  child: ListView.builder(
-                    itemCount: data.length,
-                    itemBuilder: (context, index) {
-                      return ListTile(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => dataPagePC[index],
-                            ),
-                          );
-                        },
-                        isThreeLine: false,
-                        trailing: imagedata[index],
-                        title: Text(
-                          data[index],
-                          textAlign: TextAlign.end,
-                          style: GoogleFonts.rubik(),
-                        ),
-                        shape: Border(
-                          bottom: BorderSide(color: gray, width: .8),
-                        ),
-                      );
-                    },
+    return SizedBox(
+      width: 1100,
+      child: GridView.builder(
+        shrinkWrap: true,
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 5,
+        ),
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index) {
+          return Center(
+            child: Container(
+              alignment: Alignment.center,
+              margin: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                border: Border.all(
+                  color: black,
+                  width: .4
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: darkred.withValues(alpha: .3),
+                    blurRadius: 18,
+                    spreadRadius: 2,
+                    offset: Offset(4, 0),
+                  ),
+                ],
+                color: pcColorGird[index],
+                borderRadius: BorderRadius.circular(24),
+              ),
+              width: 200,
+              height: 250,
+              child: ListTile(
+                subtitle: Container(
+                  margin: EdgeInsets.only(top: 8),
+                  child: Text(
+                    data[index],
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.rubik(
+                      fontWeight: FontWeight.bold,
+                      color: milk,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
-              ],
+      
+                title: imagedata2[index],
+
+                focusColor: black,
+              ),
             ),
-          ),
-        ],
-      );
+          );
+        },
+      ),
+    );
   }
 }
-
-

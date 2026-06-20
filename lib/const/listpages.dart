@@ -9,7 +9,7 @@ import 'package:loea/android/pages/infodata.dart';
 import 'package:loea/android/pages/screendata.dart';
 import 'package:loea/android/pages/storage.dart';
 import 'package:loea/const/color.dart';
-import 'package:loea/pc/costompage/screeninfopage.dart';
+import 'package:loea/pc/costompage/screenstorage.dart';
 
 List Pages = [
   Center(child: Text("الرئيسية"),),
@@ -39,11 +39,7 @@ List dataPage = [
 ];
 
 List dataPagePC = [
-  Screeninfopage(),
-  Screeninfopage(),
-  Screeninfopage(),
-  Screeninfopage(),
-  Screeninfopage(),
+  Screenstorage()
 ];
 
 List imagedata = [
@@ -62,4 +58,4 @@ List imagedata2 = [
   Icon(Icons.charging_station_rounded, size: 84, color: milk,),
 ];
 
-List pcColorGird = [cyan, cyan2, gray, green, darkred];
+List pcColorGird = [cyan, cyan2, gray, darkred, cyan , cyan2];

@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:loea/const/color.dart';
 import 'package:loea/const/textEditController.dart';
 import 'package:loea/pc/costom%20widget/addprodact.dart';
-import 'package:loea/pc/costompage/storageinfo.dart';
 import 'package:loea/pc/costompage/storagelist.dart';
 
 class Storage extends StatefulWidget {

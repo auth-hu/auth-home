@@ -45,6 +45,9 @@ class _StoragelistState extends State<Storagelist> {
               width: 200,
               height: 250,
               child: ListTile(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => dataPagePC[index],));
+                },
                 subtitle: Container(
                   margin: EdgeInsets.only(top: 8),
                   child: Text(

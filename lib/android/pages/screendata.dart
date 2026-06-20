@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:loea/android/costom/addsome.dart';
 import 'package:loea/android/costom/addsomefield.dart';
 import 'package:loea/android/costom/appPar.dart';
-import 'package:loea/android/costom/textFieldSearch.dart';
 import 'package:loea/android/func/addsomefun.dart';
 import 'package:loea/android/pages/data/streambuilserdata.dart';
 import 'package:loea/const/color.dart';
@@ -24,8 +23,6 @@ class _ScreendataState extends State<Screendata> {
         child: Column(
           children: [
             Apppar(title: "الشاشات", search: false),
-
-            
             SizedBox(height: 8,),
             Addsome(
               screen: "شاشة",

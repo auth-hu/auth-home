@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -52,12 +54,11 @@ class _StraembuilderforpcState extends State<Straembuilderforpc> {
                     height: 250,
                     child: InkWell(
                       onTap: (){
-                        setState(() {
                           namelist = '${docs[index]['name']}';
-                          count = '${docs[index]['pieces']}';
+                          pieces = '${docs[index]['pieces']}';
                           price = '${docs[index]['CompanyPrice']}';
                           like = '${docs[index]['likeScreen']}';
-                        });
+                          
                       },
                       child: Column(
                         children: [

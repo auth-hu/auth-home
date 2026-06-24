@@ -1,4 +1,6 @@
 String namelist = '';
-String count = '';
+String pieces = '';
 String price = '';
 String like = '';
+
+bool click = true;

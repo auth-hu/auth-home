@@ -15,6 +15,8 @@ class Costominfo extends StatelessWidget {
       child: Column(
         children: [
           Container(
+            width: double.infinity,
+            alignment: Alignment.centerRight,
             margin: EdgeInsets.symmetric(vertical: 8,),
             child: Text(
               name.isNotEmpty ? ": $name" : "",
@@ -29,6 +31,7 @@ class Costominfo extends StatelessWidget {
 
           Container(
             width: double.infinity,
+            padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               border: Border.all(
                 color: green,
@@ -36,11 +39,12 @@ class Costominfo extends StatelessWidget {
               ),
             ),
             child: Text(
-              subName.isNotEmpty ? ": $subName" : '',
+              subName.isNotEmpty ? subName : '',
               style: GoogleFonts.rubik(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: green
+                color: green,
+                decoration: TextDecoration.none
               ),
             ),
           )

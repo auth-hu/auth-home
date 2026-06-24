@@ -12,4 +12,11 @@ const List pages = [
   Mylist()
 ];
 
+List names = [
+  'اسم المنتج',
+  'العدد',
+  'السعر',
+  'المتشابه',
+];
+
 int currectPage = 0;

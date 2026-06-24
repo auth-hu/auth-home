@@ -45,7 +45,7 @@ class _ScreenpageState extends State<Screenpage> {
         Expanded(
           child: Container(
             margin: EdgeInsets.all(8),
-            child: Streambuilderforpc(collection: 'screen'),
+            child: Straembuilderforpc(collection: 'screen'),
           )
           )
         /* List Veiw Section End */

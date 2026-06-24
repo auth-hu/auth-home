@@ -3,15 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:loea/const/color.dart';
 import 'package:loea/const/listpages.dart';
+import 'package:loea/pc/const/var.dart';
 
-class Streambuilderforpc extends StatelessWidget {
+
+class Straembuilderforpc extends StatefulWidget {
   final String collection;
-  const Streambuilderforpc({super.key, required this.collection});
+  const Straembuilderforpc({super.key, required this.collection});
 
+  @override
+  State<Straembuilderforpc> createState() => _StraembuilderforpcState();
+}
+
+class _StraembuilderforpcState extends State<Straembuilderforpc> {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection(collection).snapshots(),
+      stream: FirebaseFirestore.instance.collection(widget.collection).snapshots(),
       builder: (context, snapshot) {
         if (snapshot.hasError) {
           return Center(child: Text("حدث خطأ"));
@@ -44,7 +51,14 @@ class Streambuilderforpc extends StatelessWidget {
                     width: 200,
                     height: 250,
                     child: InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        setState(() {
+                          namelist = '${docs[index]['name']}';
+                          count = '${docs[index]['pieces']}';
+                          price = '${docs[index]['CompanyPrice']}';
+                          like = '${docs[index]['likeScreen']}';
+                        });
+                      },
                       child: Column(
                         children: [
                           Expanded(
@@ -74,7 +88,7 @@ class Streambuilderforpc extends StatelessWidget {
                           ),
                                       
                           Container(
-                            margin: EdgeInsets.all(4),
+                            margin: EdgeInsets.all(6),
                             child: Text(
                               docs[index]['pieces'],
                               style: GoogleFonts.rubik(
@@ -86,7 +100,7 @@ class Streambuilderforpc extends StatelessWidget {
                           ),
                                       
                           Container(
-                            margin: EdgeInsets.all(4),
+                            margin: EdgeInsets.all(12),
                             child: Text(
                               docs[index]['CompanyPrice'],
                               style: GoogleFonts.rubik(

@@ -4,8 +4,9 @@ import 'package:loea/const/color.dart';
 
 class Addprodact extends StatelessWidget {
   final String title;
+  late String? doc;
   final TextEditingController controller;
-  const Addprodact({super.key, required this.controller, required this.title});
+  Addprodact({super.key, required this.controller, required this.title, this.doc});
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +39,11 @@ class Addprodact extends StatelessWidget {
               maxLines: 1,
               cursorColor: gray,
               decoration: InputDecoration(
+                labelText: doc,
+                labelStyle: GoogleFonts.rubik(
+                fontWeight: FontWeight.bold,
+                color: gray
+              ),
                 focusedBorder: OutlineInputBorder(
                   borderSide: BorderSide(color: gray, width: 1.4)
                 ),

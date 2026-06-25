@@ -4,6 +4,7 @@ import 'package:loea/const/color.dart';
 import 'package:loea/pc/const/list.dart';
 import 'package:loea/pc/const/var.dart';
 import 'package:loea/pc/costompage/costominfo.dart';
+import 'package:loea/pc/func/editscreen.dart';
 
 class Screeninfopage extends StatefulWidget {
   const Screeninfopage({super.key});
@@ -92,7 +93,7 @@ class _ScreeninfopageState extends State<Screeninfopage> {
                       color: lightBlue,
                       margin: EdgeInsets.symmetric(vertical: 18, horizontal: 12),
                       child: MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {editscreen(context, namelist, pieces, price, like);},
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

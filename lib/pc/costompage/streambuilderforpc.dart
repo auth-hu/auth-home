@@ -54,6 +54,8 @@ class _StraembuilderforpcState extends State<Straembuilderforpc> {
                     height: 250,
                     child: InkWell(
                       onTap: (){
+                          var selectedDoc = docs[index].reference;
+                          docId = selectedDoc;
                           namelist = '${docs[index]['name']}';
                           pieces = '${docs[index]['pieces']}';
                           price = '${docs[index]['CompanyPrice']}';

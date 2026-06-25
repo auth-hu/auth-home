@@ -20,3 +20,9 @@ List names = [
 ];
 
 int currectPage = 0;
+
+List addcostomermune = [
+  'الطلبات الحالية',
+  'الطلبات المكتملة',
+  'الطلبات المرفوضة',
+];

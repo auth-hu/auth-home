@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loea/const/color.dart';
 import 'package:loea/pc/costompage/listaddcost.dart';
 
 class Addcostemor extends StatefulWidget {
@@ -11,12 +12,15 @@ class Addcostemor extends StatefulWidget {
 class _AddcostemorState extends State<Addcostemor> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Listaddcost(),
-        ],
-      )
-    );
+    return Container(
+        margin: EdgeInsets.all(0),
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          children: [
+            Listaddcost(),
+          ],
+        ),
+      );
   }
 }
